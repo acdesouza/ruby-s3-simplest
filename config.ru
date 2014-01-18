@@ -1,6 +1,6 @@
 #\ -w
-require './app/s3_uploader.rb'
+require './app/simplest_ruby_s3.rb'
 
 use Rack::Reloader
 
-run S3Uploader.new
+run SimplestRubyS3.new

@@ -1,4 +1,4 @@
-class S3Uploader
+class SimplestRubyS3
   def call(env)
     request = Rack::Request.new(env)
 
