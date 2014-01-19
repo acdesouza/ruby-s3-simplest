@@ -1,5 +1,8 @@
 #\ -w
-require './app/simplest_ruby_s3.rb'
+require 'rubygems'
+require 'bundler/setup'
+
+require './app/simplest_ruby_s3'
 
 use Rack::Reloader
 
