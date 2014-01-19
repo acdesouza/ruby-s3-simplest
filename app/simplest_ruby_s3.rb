@@ -16,7 +16,12 @@ class SimplestRubyS3
       end
     when 'POST'
       if env["PATH_INFO"] == "/upload"
-        return [200, {'Content-Type'  => 'text/html'}, ["Uploaded"]]
+
+        uploader_s3 = UploaderS3.new('ACCESS_KEY_ID', 'SECRET_ACCESS_KEY', 'BUCKET_NAME')
+        uploader_s3.upload(request.params["file"][:filename],
+                           request.params["file"][:tempfile])
+
+        return [200, {'Content-Type'  => 'text/html'}, ["Uploaded: #{request.params}"]]
       end
     end
 

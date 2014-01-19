@@ -3,6 +3,7 @@ require 'rubygems'
 require 'bundler/setup'
 
 require './app/simplest_ruby_s3'
+require './app/uploader_s3'
 
 use Rack::Reloader
 
