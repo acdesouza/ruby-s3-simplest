@@ -17,7 +17,9 @@ class SimplestRubyS3
     when 'POST'
       if env["PATH_INFO"] == "/upload"
 
-        uploader_s3 = UploaderS3.new('ACCESS_KEY_ID', 'SECRET_ACCESS_KEY', 'BUCKET_NAME')
+        uploader_s3 = UploaderS3.new(ENV['ACCESS_KEY_ID'],
+                                     ENV['SECRET_ACCESS_KEY'],
+                                     ENV['BUCKET_NAME'])
         uploader_s3.upload(request.params["file"][:filename],
                            request.params["file"][:tempfile])
 
