@@ -42,7 +42,7 @@ This page allows upload a file to informed AWS bucket.
                 "s3:GetObject",
                 "s3:PutObject"
             ],
-            "Resource": "arn:aws:s3:::.../" <==== <Bucket ARN>/
+            "Resource": "arn:aws:s3:::.../*" <==== <Bucket ARN>/
         }
     ]
 }
