@@ -16,27 +16,27 @@ This page allows upload a file to informed AWS bucket.
 
 1. Create a new user, using AIM
 1. Create a bucket on S3
-1. Config your bucket access:
+1. Config your bucket:
 
 ```json
 {
     "Version": "2012-10-17",
-    "Id": "<< UNIQUE_NAME_bucket_policy >>",  <== Give a name to this bucket policy
+    "Id": "<< UNIQUE_NAME_bucket_policy >>",  <=== Give a unique name to this bucket policy
     "Statement": [
         {
-            "Sid": "<< UNIQUE_NAME_bucket >>", <= Give a name to this bucket policy
+            "Sid": "<< UNIQUE_NAME_bucket >>", <== Give a unique name to this bucket policy
             "Effect": "Allow",
             "Principal": {
-                "AWS": "arn:aws:iam::..."  <===== <User ARN do IAM>
+                "AWS": "arn:aws:iam::..."  <====== <User ARN do IAM>
             },
             "Action": "s3:ListBucket",
-            "Resource": "arn:aws:s3:::..." <===== <Bucket ARN>
+            "Resource": "arn:aws:s3:::..." <====== <Bucket ARN>
         },
         {
-            "Sid": "NOME_ÚNICO_bucket_files",
+            "Sid": "UNIQUE_NAME_bucket_files", <== Give a unique name to this files bucket policy
             "Effect": "Allow",
             "Principal": {
-                "AWS": "arn:aws:iam::..." <====== <User ARN do IAM>
+                "AWS": "arn:aws:iam::..." <======= <User ARN do IAM>
             },
             "Action": [
                 "s3:GetObject",
@@ -47,3 +47,8 @@ This page allows upload a file to informed AWS bucket.
     ]
 }
 ```
+
+This policy will allows your newly created user to:
+- List your bucket
+- Add files to this bucket
+- Read files from this bucket
